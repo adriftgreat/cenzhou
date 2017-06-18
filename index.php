@@ -66,7 +66,7 @@
 switch (ENVIRONMENT)
 {
 	case 'development':
-		error_reporting(-1);
+		error_reporting(E_ERROR);
 		ini_set('display_errors', 1);
 	break;
 
@@ -153,7 +153,16 @@ switch (ENVIRONMENT)
  */
 	// The directory name, relative to the "controllers" directory.  Leave blank
 	// if your controller is not in a sub-directory within the "controllers" one
-	// $routing['directory'] = '';
+
+	if(strstr( $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'], 'admin'))
+	{
+		$routing['directory'] = 'admin';
+	}
+	else
+	{
+		$routing['directory'] = 'www';
+	}
+
 
 	// The controller class file name.  Example:  mycontroller
 	// $routing['controller'] = '';
