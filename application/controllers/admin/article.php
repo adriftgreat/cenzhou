@@ -39,7 +39,7 @@ class Article extends Admin_Controller
 
     public function save()
     {
-        $art_id =   $this->input->post('a_id');
+        $art_id =   $this->input->post('art_id');
         $title  =   $this->input->post('title');
         $sort   =   $this->input->post('sort');
         $content=   $this->input->post('content', false);
@@ -60,5 +60,17 @@ class Article extends Admin_Controller
         }
 
         echo $sta;
+    }
+
+    public function del()
+    {
+        $article_id =   $this->input->post('art_id');
+
+        if(!$article_id)
+        {
+            return false;
+        }
+        
+        $this->article_model->deleteArticle($article_id, array('status' => 0));
     }
 }

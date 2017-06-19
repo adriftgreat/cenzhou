@@ -1,7 +1,7 @@
 <?php $this->load->view('/element/header');?>
 <style>
     td{
-        height:50px;
+        line-height: 34px !important;
     }
 </style>
 <div id="page-wrapper">
@@ -9,7 +9,7 @@
     <div class="col-lg-12">
       <div class="page-header page-header-z">
         <h3 class="pull-left">内容管理</h3>
-        <h3 class="pull-right"><input type="button" class="btn btn-info article_edit" pro_id="0" value="添加"/></h3>
+        <h3 class="pull-right"><input type="button" class="btn btn-info article_edit" art_id="0" value="添加"/></h3>
         <div class="clearfix"></div>
       </div>
     </div>
@@ -24,17 +24,17 @@
                   <th>标题</th>
                   <th>添加时间</th>
                   <th>修改时间</th>
-                  <th>编辑</th>
+                  <th>操作</th>
               </tr>
               </thead>
               <tbody>
               <?php foreach($list as $key => $value){?>
               <tr>
                   <th scope="row"><?php echo $value['id']?></th>
-                  <td><?php echo $value['title']?></td>
+                  <td><a href="#"><?php echo $value['title']?></a></td>
                   <td><?php echo $value['add_time']?></td>
                   <td><?php echo $value['edit_time']?></td>
-                  <td><a class="btn btn-primary btn-sm">编辑</a><a class="btn btn-danger btn-sm">删除</a></td>
+                  <td><a art_id="<?php echo $value['id']?>" class="btn btn-primary btn-sm article_edit">修改</a> <a class="btn btn-danger btn-sm">删除</a></td>
               </tr>
               <?php }?>
               </tbody>

@@ -1,9 +1,9 @@
 <?php $this->load->view('/element/header');?>
-    <style>
-        td{
-            height:50px;
-        }
-    </style>
+<style>
+    td{
+        line-height: 34px;
+    }
+</style>
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">

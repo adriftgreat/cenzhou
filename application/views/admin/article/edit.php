@@ -14,6 +14,7 @@
 </div>
 <div class="modal-body">
     <form>
+        <input type="hidden" name="art_id" value="<?php echo intval($article['id']);?>"/>
         <div class="form-group">
             <label for="exampleInputEmail1">标题</label>
             <input type="text" id="title" class="form-control" placeholder="标题" value="<?php echo $article['title'];?>">
@@ -30,6 +31,6 @@
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-    <input type="hidden" id="art_id" value="<?php echo $article['id'];s?>"/>
+    <input type="hidden" id="art_id" value="<?php echo $article['id'];?>"/>
     <button type="button" class="btn btn-primary" id="article_save"><?php echo $pro_id > 0 ? '保存' : '添加';?></button>
 </div>
