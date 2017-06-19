@@ -14,26 +14,20 @@
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <thead>
                     <tr>
-                        <th>编号</th>
-                        <th>图片</th>
-                        <th>名称</th>
-                        <th>价格 / 销售价格</th>
-                        <th>分类</th>
+                        <th>导航名称</th>
+                        <th>导航banner图</th>
                         <th>添加时间</th>
-                        <th>操作</th>
+                        <th>是否显示</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php foreach($product_list as $k => $product){?>
-                        <tr class="odd grade<?php echo $product['id']?>">
-                            <td><?php echo $product['id']?></td>
-                            <td><?php if($product['thumb']){?><img style="max-width: 100px;" src="/<?php echo $product['thumb']?>"/><?php }?></td>
-                            <td><?php echo $product['title']?></td>
-                            <td><?php echo $product['price']?> / <?php echo $product['sales_price']?></td>
-                            <td><?php echo $sort_list[$product['sort_id']]['title'];?></td>
-                            <td><?php echo $product['create_time']?></td>
-                            <td><button type="button" class="btn btn-info btn-sm product_edit" pro_id="<?php echo $product['id']?>">编辑</button>   <button type="button" class="btn btn-danger btn-sm product_delete" pro_title="<?php echo $product['title'];?>" pro_id="<?php echo $product['id']?>">删除</button></td>
-                        </tr>
+                    <tr class="odd grade<?php echo $product['id']?>">
+                        <td><?php echo $product['id']?></td>
+                        <td><?php if($product['thumb']){?><img style="max-width: 100px;" src="/<?php echo $product['thumb']?>"/><?php }?></td>
+                        <td><?php echo $product['title']?></td>
+                        <td><?php echo $product['price']?> / <?php echo $product['sales_price']?></td>
+                    </tr>
                     <?php }?>
                     </tbody>
                 </table>
