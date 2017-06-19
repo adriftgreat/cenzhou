@@ -154,15 +154,9 @@ switch (ENVIRONMENT)
 	// The directory name, relative to the "controllers" directory.  Leave blank
 	// if your controller is not in a sub-directory within the "controllers" one
 
-	if(strstr( $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'], 'admin'))
-	{
-		$routing['directory'] = 'admin';
-	}
-	else
-	{
-		$routing['directory'] = 'www';
-	}
+    $web_type   =   strstr( $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'], 'admin') ? 'admin' : 'www';
 
+    $routing['directory'] = $web_type;
 
 	// The controller class file name.  Example:  mycontroller
 	// $routing['controller'] = '';
@@ -278,9 +272,9 @@ switch (ENVIRONMENT)
 	define('APPPATH', $application_folder.DIRECTORY_SEPARATOR);
 
 	// The path to the "views" directory
-	if ( ! isset($view_folder[0]) && is_dir(APPPATH.'views'.DIRECTORY_SEPARATOR))
+	if ( ! isset($view_folder[0]) && is_dir(APPPATH.'views\\'.$web_type.DIRECTORY_SEPARATOR))
 	{
-		$view_folder = APPPATH.'views';
+		$view_folder = APPPATH.'views\\'.$web_type;
 	}
 	elseif (is_dir($view_folder))
 	{

@@ -1,27 +1,27 @@
 $(function(){
-	$('.dis_order_detail').click(function(){
-		var order_id	=	$(this).attr('order_id');
-		$('#order_template').modal({
+	$('.article_edit').click(function(){
+		var art_id	=	$(this).attr('art_id');
+		$('#edit_template').modal({
 			backdrop:true,
 			keyboard:false,
-			remote :'/action/admin/order.php?action=detail&o_id='+order_id
+			remote :'/article/edit?art_id='+art_id
 		})
 	});
 
-	$('.product_edit').click(function(){
-		var pro_id	=	$(this).attr('pro_id');
-		$('#product_template').modal({
+	$('.column_edit').click(function(){
+		var pro_id	=	$(this).attr('');
+		$('#edit_template').modal({
 			backdrop:true,
 			keyboard:false,
-			remote:'/action/admin/products.php?action=edit&p_id='+pro_id
+			remote:'/home/edit?p_id='+pro_id
 		})
 	});
 
-	$("#product_template").on("shown.bs.modal", function() {
+	$("#edit_template").on("shown.bs.modal", function() {
 		$(window).resize();
 	});
 
-	$("#order_template, #product_template").on("hidden.bs.modal", function() {
+	$("#edit_template").on("hidden.bs.modal", function() {
 		$(this).removeData("bs.modal");
 	});
 
@@ -50,7 +50,7 @@ $(function(){
 		}
 	});
 	
-	$('#product_template').on('click','#product_save',function()
+	$('#edit_template').on('click','#column_save',function()
 	{
 		var pro_id	=	parseInt($('#pro_id').val()),
 			title	=	$('#title').val(),
@@ -85,4 +85,37 @@ $(function(){
 		);
 
 	});
+
+
+    $('#edit_template').on('click','#article_save',function()
+    {
+        var art_id	=	parseInt($('#art_id').val()),
+            title	=	$('#title').val(),
+            sort	=	$('#sort').val(),
+            content	=	ue_editor.getContent();
+
+        $.post(
+            '/article/save',
+            {
+                art_id:art_id,
+                title:title,
+				sort:sort,
+                content:content
+            },
+            function(result)
+            {
+                if(!result.state)
+                {
+                    alert(result.msg);
+                }
+                else
+                {
+                    alert(art_id > 0 ? '编辑成功' : '添加成功');
+                    window.location.reload();
+                }
+            },
+            'json'
+        );
+
+    });
 })

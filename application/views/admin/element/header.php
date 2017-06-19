@@ -75,13 +75,13 @@
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a href="/action/admin/products.php"><i class="fa fa-bank fa-fw"></i> 导航管理</a>
+                        <a href="/"><i class="fa fa-bank fa-fw"></i> 导航管理</a>
                     </li>
                     <li>
-                        <a href="/action/admin/order.php"><i class="fa fa-bar-chart-o fa-fw"></i> 内容管理</a>
+                        <a href="/article"><i class="fa fa-bar-chart-o fa-fw"></i> 内容管理</a>
                     </li>
                     <li>
-                        <a href="/action/admin/member.php"><i class="fa fa-child fa-fw"></i> 图片管理</a>
+                        <a href="/images"><i class="fa fa-child fa-fw"></i> 图片管理</a>
                     </li>
                 </ul>
             </div>

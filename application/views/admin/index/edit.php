@@ -8,28 +8,14 @@
 <div class="modal-body">
     <form class="form-horizontal" role="form">
         <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">标题：</label>
+            <label for="inputEmail3" class="col-sm-2 control-label">名称：</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="title" placeholder="title" value="<?php echo $pro_info['title'];?>" />
             </div>
         </div>
 
         <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">原始价格：</label>
-            <div class="col-sm-10">
-                <input type="float" class="form-control" id="price" placeholder="price" value="<?php echo $pro_info['price'];?>" />
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">销售价格：</label>
-            <div class="col-sm-10">
-                <input type="number" class="form-control" id="s_price" placeholder="sales price" value="<?php echo $pro_info['sales_price'];?>" />
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">分类信息：</label>
+            <label for="inputEmail3" class="col-sm-2 control-label">所属分类：</label>
             <div class="col-sm-10">
                 <select class="form-control" id="sort_id">
                     <?php
@@ -39,6 +25,13 @@
                     }
                     ?>
                 </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">排序：</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="s_price" placeholder="sales price" value="<?php echo $pro_info['sales_price'];?>" />
             </div>
         </div>
 
@@ -83,8 +76,8 @@
 
 <div class="modal-footer">
     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    <input type="hidden" id="pro_id" value="<?php echo $pro_id;s?>"/>
-    <button type="button" class="btn btn-primary" id="product_save"><?php echo $pro_id > 0 ? 'Save changes' : 'Add Products';?></button>
+    <input type="hidden" id="column_id" value="<?php echo $pro_id;s?>"/>
+    <button type="button" class="btn btn-primary" id="product_save"><?php echo $pro_id > 0 ? '保存' : '添加';?></button>
 </div>
 
 <script type="text/javascript" async="async" src="/public/uploader/webuploader.min.js"></script>

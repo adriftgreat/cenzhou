@@ -5,6 +5,6 @@ class Home extends Home_Controller
 {
 	public function index()
 	{
-	    $this->load->view('/www/home/index');
+	    $this->load->view('/home/index');
 	}
 }

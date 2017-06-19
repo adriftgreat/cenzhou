@@ -5,6 +5,6 @@ class Article extends Home_Controller
 {
 	public function index()
 	{
-	    $this->load->view('/www/article/index');
+	    $this->load->view('/article/index');
 	}
 }

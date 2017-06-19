@@ -9,7 +9,7 @@
 <!-- project JavaScript -->
 <script src="/public/metisMenu/js/metisMenu.min.js"></script>
 <script src="/public/admin/js/sb-admin-2.js"></script>
-<script src="/public/admin/js/handle.js"></script>
+<script src="/public/admin/js/handle.js?<?php echo time();?>"></script>
 
 
 </body>

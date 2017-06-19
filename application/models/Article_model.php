@@ -31,10 +31,41 @@ class Article_model extends CI_Model
      */
     public function getArticleList($column_id, $limit = 10, $offset = 0)
     {
-        $this->db->where('column_id', $column_id);
+        if($column_id)
+        {
+            $this->db->where('column_id', $column_id);
+        }
+
         $this->db->limit($limit, $offset);
         $result =   $this->db->get($this->table_name)->result_array();
 
         return $result;
+    }
+
+    /**
+     * 更新文章
+     * @param $id
+     * @param $data
+     * @return mixed
+     */
+    public function updateArticle($id, $data)
+    {
+        $this->db->where('id', $id);
+        $this->db->set($data);
+        $sta =   $this->db->update('article');
+
+        return $sta;
+    }
+
+    /**
+     * 添加文章
+     * @param $data
+     * @return mixed
+     */
+    public function addArticle($data)
+    {
+        $sta    =   $this->db->insert($this->table_name, $data);
+
+        return $sta;
     }
 }
