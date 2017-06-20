@@ -24,6 +24,19 @@ class Images_model extends CI_Model
     }
 
     /**
+     * 获取图片信息
+     * @param $id
+     * @return mixed
+     */
+    public function getImageInfo($id)
+    {
+        $this->db->where('id', $id);
+        $result =   $this->db->get($this->table_name)->row_array();
+
+        return $result;
+    }
+
+    /**
      * 更新图片
      * @param $id
      * @param $data
@@ -59,6 +72,18 @@ class Images_model extends CI_Model
             $sta    =   $this->db->insert_id();
         }
         
+        return $sta;
+    }
+
+    /**
+     * 删除图片
+     * @param $id
+     * @return mixed
+     */
+    public function delImages($id)
+    {
+        $sta    =    $this->db->delete($this->table_name, array('id' => $id));
+
         return $sta;
     }
 }

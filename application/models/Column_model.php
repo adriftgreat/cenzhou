@@ -8,6 +8,11 @@ class Column_model extends CI_Model
         parent::__construct();
     }
 
+    /**
+     * 获取栏目列表
+     * @param int $p_id
+     * @return mixed
+     */
     public function getColumnList($p_id = 0)
     {
         if($p_id)
@@ -17,6 +22,20 @@ class Column_model extends CI_Model
         $this->db->where('status', 1);
 
         $result =   $this->db->get($this->table_name)->result_array();
+
+        return $result;
+    }
+
+    /**
+     * 获取栏目详情
+     * @param $id
+     * @return mixed
+     */
+    public function getColumnInfo($id)
+    {
+        $this->db->where('id', $id);
+
+        $result =   $this->db->get($this->table_name)->row_array();
 
         return $result;
     }

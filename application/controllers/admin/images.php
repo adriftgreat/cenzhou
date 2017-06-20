@@ -46,4 +46,14 @@ class Images extends Admin_Controller
 
         echo json_encode($result);
     }
+
+    public function del()
+    {
+        $image_id   =   $this->input->get_post('i_id');
+
+        $image_info =   $this->images_model->getImageInfo($image_id);
+
+        $this->images_model->delImages($image_id);
+        unlink($image_info['img_url']);
+    }
 }

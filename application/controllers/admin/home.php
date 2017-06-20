@@ -19,11 +19,13 @@ class Home extends Admin_Controller
 
         if($column_id)
         {
-            $article_info   =   $this->column_model->getArticleInfo($column_id);
+            $column_info=   $this->column_model->getColumnInfo($column_id);
+            $image_list =   $this->images_model->getImageList($column_id, 1);
         }
 
         $view_data  =   array(
-            'article'   =>  $article_info,
+            'column'    =>  $column_info,
+            'img_list'  =>  $image_list,
         );
 
         $this->load->view('/article/edit', $view_data);
@@ -36,6 +38,7 @@ class Home extends Admin_Controller
         $title  =   $this->input->post('title');
         $sort   =   $this->input->post('sort');
         $img_ids=   $this->input->post('img_ids');
+
         $data   =   array(
             'title'     =>  $title,
             'sort'      =>  $sort
