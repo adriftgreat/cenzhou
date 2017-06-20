@@ -60,7 +60,7 @@ $(function(){
 			img_ids	=	$('#img_ids').val();
 
 		$.post(
-			'/action/admin/products.php?action=save',
+			'/home/save',
 			{
 				pro_id:pro_id,
 				title:title,

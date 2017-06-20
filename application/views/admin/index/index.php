@@ -9,7 +9,7 @@
         <div class="col-lg-12">
             <div class="page-header page-header-z">
                 <h3 class="pull-left">导航管理</h3>
-                <h3 class="pull-right"><input type="button" class="btn btn-info column_edit" col_id="6" value="添加"/></h3>
+                <h3 class="pull-right"><input type="button" class="btn btn-info column_edit" col_id="0" value="添加"/></h3>
                 <div class="clearfix"></div>
             </div>
         </div>

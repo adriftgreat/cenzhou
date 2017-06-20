@@ -72,7 +72,7 @@
 <div class="modal-footer">
     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     <input type="hidden" id="column_id" value="<?php echo $pro_id;s?>"/>
-    <button type="button" class="btn btn-primary" id="product_save"><?php echo $pro_id > 0 ? '保存' : '添加';?></button>
+    <button type="button" class="btn btn-primary" id="column_save"><?php echo $pro_id > 0 ? '保存' : '添加';?></button>
 </div>
 
 <script type="text/javascript" async="async" src="/public/uploader/webuploader.min.js"></script>
