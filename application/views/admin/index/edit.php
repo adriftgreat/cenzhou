@@ -1,41 +1,32 @@
 <link rel="stylesheet" type="text/css" href="/public/uploader/css/webuploader.css" />
 <link rel="stylesheet" type="text/css" href="/public/uploader/style.css?<?php echo time();?>" />
+<script type="text/javascript" async="async">
+    var first_p_id  =   <?php echo intval($column['p_id']);?>;
+</script>
 
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-    <h4 class="modal-title" id="exampleModalLabel"><?php echo $pro_id > 0 ? '编辑' : '添加';?>产品</h4>
+    <h4 class="modal-title" id="exampleModalLabel"><?php echo $column['p_id'] > 0 ? '编辑' : '添加';?>产品</h4>
 </div>
 <div class="modal-body">
     <form class="form-horizontal" role="form">
         <div class="form-group">
             <label for="inputEmail3" class="col-sm-2 control-label">名称：</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="title" placeholder="栏目名称" value="<?php echo $pro_info['title'];?>" />
+                <input type="text" class="form-control" id="title" placeholder="栏目名称" value="<?php echo $column['title'];?>" />
             </div>
         </div>
 
         <div class="form-group">
             <label for="inputEmail3" class="col-sm-2 control-label">所属分类：</label>
-            <div class="col-sm-10">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Action <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </div>
+            <div class="col-sm-10" id="column_select">
             </div>
         </div>
 
         <div class="form-group">
             <label for="inputEmail3" class="col-sm-2 control-label">排序：</label>
             <div class="col-sm-10">
-                <input type="number" class="form-control" id="sort" placeholder="排序，数值越高越靠前，默认 0" value="<?php echo $pro_info['sales_price'];?>" />
+                <input type="number" class="form-control" id="sort" placeholder="排序，数值越高越靠前，默认 0" value="<?php echo $column['sort'];?>" />
             </div>
         </div>
 
@@ -86,6 +77,7 @@
 
 <script type="text/javascript" async="async" src="/public/uploader/webuploader.min.js"></script>
 <script type="text/javascript" async="async" src="/public/uploader/upload.js?<?php echo time();?>"></script>
+<script type="text/javascript" async="async" src="/public/admin/js/column.js?<?php echo time();?>"></script>
 <script type="text/javascript" async="async">
     $(function(){
         $('#edit_img').click(function()

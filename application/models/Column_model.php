@@ -19,10 +19,10 @@ class Column_model extends CI_Model
         {
             $this->db->where('p_id', $p_id);
         }
+
         $this->db->where('status', 1);
-
         $result =   $this->db->get($this->table_name)->result_array();
-
+        
         return $result;
     }
 

@@ -27,6 +27,21 @@
     <!-- jQuery -->
     <script src="/public/js/jquery.js"></script>
 
+    <script>
+    var base_column =   <?php echo json_encode($c_list);?>;
+    </script>
+
+    <style>
+        .btn .caret
+        {
+            margin-left: 10px !important;
+        }
+        .btn-group
+        {
+            margin-right: 5px;
+        }
+    </style>
+
 </head>
 
 <body>

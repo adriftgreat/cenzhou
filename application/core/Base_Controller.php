@@ -7,7 +7,6 @@ class Admin_Controller extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('column_model');
-
 		$this->getColumn();
 	}
 
@@ -18,10 +17,10 @@ class Admin_Controller extends CI_Controller
 
         foreach($result as $key => $value)
         {
-            $array[$value['pid']][] =  $value;
+            $array[$value['p_id']][] =  $value;
         }
 
-        $this->view->vars('c_list', $array);
+        $this->load->vars('c_list', $array);
     }
 
 	public function __destruct()

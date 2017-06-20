@@ -9,7 +9,7 @@ $(function(){
 	});
 
 	$('.column_edit').click(function(){
-		var column_id	=	$(this).attr('');
+		var column_id	=	$(this).attr('col_id');
 		$('#edit_template').modal({
 			backdrop:true,
 			keyboard:false,

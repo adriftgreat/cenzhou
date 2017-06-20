@@ -15,10 +15,11 @@ class Home extends Admin_Controller
 
     public function edit()
     {
-        $column_id =   $this->input->get_post('art_id');
+        $column_id =   $this->input->get_post('c_id');
 
         if($column_id)
         {
+            $this->load->model('images_model');
             $column_info=   $this->column_model->getColumnInfo($column_id);
             $image_list =   $this->images_model->getImageList($column_id, 1);
         }
@@ -28,8 +29,7 @@ class Home extends Admin_Controller
             'img_list'  =>  $image_list,
         );
 
-        $this->load->view('/article/edit', $view_data);
-        $this->load->view('/index/edit');
+        $this->load->view('/index/edit', $view_data);
     }
 
     public function save()

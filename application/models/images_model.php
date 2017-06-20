@@ -16,7 +16,7 @@ class Images_model extends CI_Model
      */
     public function getImageList($pid, $type)
     {
-        $this->db->where('pid', $pid);
+        $this->db->where('p_id', $pid);
         $this->db->where('type', $type);
         $result =   $this->db->get($this->table_name)->row_array();
 
