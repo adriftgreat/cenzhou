@@ -17,6 +17,7 @@ class Article_model extends CI_Model
     public function getArticleInfo($article_id)
     {
         $this->db->where('id', $article_id);
+        $this->db->where('status', 1);
         $result =   $this->db->get($this->table_name)->row_array();
 
         return $result;
@@ -35,7 +36,7 @@ class Article_model extends CI_Model
         {
             $this->db->where('column_id', $column_id);
         }
-
+        $this->db->where('status', 1);
         $this->db->limit($limit, $offset);
         $result =   $this->db->get($this->table_name)->result_array();
 
@@ -52,7 +53,7 @@ class Article_model extends CI_Model
     {
         $this->db->where('id', $id);
         $this->db->set($data);
-        $sta =   $this->db->update('article');
+        $sta =   $this->db->update($this->table_name);
 
         return $sta;
     }

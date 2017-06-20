@@ -6,7 +6,23 @@ class Admin_Controller extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('column_model');
+
+		$this->getColumn();
 	}
+
+	public function getColumn()
+    {
+        $result =   $this->column_model->getColumnList();
+        $array  =   array();
+
+        foreach($result as $key => $value)
+        {
+            $array[$value['pid']][] =  $value;
+        }
+
+        $this->view->vars('c_list', $array);
+    }
 
 	public function __destruct()
 	{

@@ -71,6 +71,6 @@ class Article extends Admin_Controller
             return false;
         }
         
-        $this->article_model->deleteArticle($article_id, array('status' => 0));
+        $this->article_model->updateArticle($article_id, array('status' => 0));
     }
 }

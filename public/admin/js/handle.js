@@ -9,11 +9,11 @@ $(function(){
 	});
 
 	$('.column_edit').click(function(){
-		var pro_id	=	$(this).attr('');
+		var column_id	=	$(this).attr('');
 		$('#edit_template').modal({
 			backdrop:true,
 			keyboard:false,
-			remote:'/home/edit?p_id='+pro_id
+			remote:'/home/edit?c_id='+column_id
 		})
 	});
 

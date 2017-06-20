@@ -14,9 +14,37 @@ class Column_model extends CI_Model
         {
             $this->db->where('p_id', $p_id);
         }
+        $this->db->where('status', 1);
 
         $result =   $this->db->get($this->table_name)->result_array();
 
         return $result;
+    }
+
+    /**
+     * 更新文章
+     * @param $id
+     * @param $data
+     * @return mixed
+     */
+    public function updateColumn($id, $data)
+    {
+        $this->db->where('id', $id);
+        $this->db->set($data);
+        $sta =   $this->db->update($this->table_name);
+
+        return $sta;
+    }
+
+    /**
+     * 添加文章
+     * @param $data
+     * @return mixed
+     */
+    public function addColumn($data)
+    {
+        $sta    =   $this->db->insert($this->table_name, $data);
+
+        return $sta;
     }
 }

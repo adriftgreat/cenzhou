@@ -29,7 +29,7 @@ class Images_model extends CI_Model
      * @param $data
      * @return mixed
      */
-    public function updateArticle($id, $data)
+    public function updateImages($id, $data)
     {
         if(is_array($id))
         {
