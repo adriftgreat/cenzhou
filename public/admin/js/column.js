@@ -7,25 +7,13 @@ function setColumnHtml(pid, dis)
 		return false;
 	}
 
-	var first_html	=	'';
+	var first_html	=	'   无   ';
 	var first_val	=	0;
 
-	if(pid == 0)
+	if(dis > 0)
 	{
-		if(dis == 0)
-		{
-			first_html	=	'   无   ';
-		}
-		else
-		{
-			first_val	=	dis;
-			first_html	=	arr[dis].title;
-		}
-
-	}
-	else
-	{
-		first_html	=	arr[0].title;
+		first_val	=	arr[dis].id;
+		first_html	=	arr[dis].title;
 	}
 
 	var num	=	arr.length;
@@ -77,6 +65,7 @@ $(function()
 			i++;
 		}
 
+		console.log(column_arr);
 		for(var i = column_arr.length-1; i >= 0; i--)
 		{
 			$('#column_select').append(setColumnHtml(column_arr[i][0], column_arr[i][1]));

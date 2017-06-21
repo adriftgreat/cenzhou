@@ -64,6 +64,11 @@ class Column_model extends CI_Model
     {
         $sta    =   $this->db->insert($this->table_name, $data);
 
+        if($sta)
+        {
+            $sta    =   $this->db->insert_id();
+        }
+
         return $sta;
     }
 }

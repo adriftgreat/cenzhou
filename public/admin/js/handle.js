@@ -54,9 +54,8 @@ $(function(){
 	{
 		var pro_id	=	parseInt($('#pro_id').val()),
 			title	=	$('#title').val(),
-			price	=	$('#price').val(),
-			s_price	=	$('#s_price').val(),
-			sort_id	=	$('#sort_id option:selected').val(),
+			sort	=	$('#sort').val(),
+			sort_id	=	$('#column_select .btn-group:last').attr('data-val'),
 			img_ids	=	$('#img_ids').val();
 
 		$.post(
@@ -64,8 +63,7 @@ $(function(){
 			{
 				pro_id:pro_id,
 				title:title,
-				price:price,
-				s_price:s_price,
+				sort:sort,
 				sort_id:sort_id,
 				img_ids:img_ids
 			},

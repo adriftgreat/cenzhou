@@ -194,17 +194,15 @@
         {
             if(result.state == true)
             {
+                img_ids =   new Array();
+
                 if($('#img_ids').val() != '')
                 {
                     var img_ids    =   $('#img_ids').val().split(',');
-
-                    img_ids[img_ids.length] =   result.img_id;
-                }
-                else
-                {
-                    img_ids =   new Array(result.img_id);
                 }
 
+                img_ids[img_ids.length] =   result.img_id;
+                
                 $('#img_ids').val(img_ids.join(','));
             }
         });

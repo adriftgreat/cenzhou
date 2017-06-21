@@ -46,11 +46,11 @@ class Home extends Admin_Controller
 
         if($c_id > 0)
         {
-            $sta    =   $this->column->updateColumn($c_id, $data);
+            $sta    =   $this->column_model->updateColumn($c_id, $data);
         }
         else
         {
-            $sta    =   $this->article_model->addColumn($data);
+            $sta    =   $this->column_model->addColumn($data);
         }
 
         if($sta && $img_ids && !$c_id)
@@ -59,10 +59,10 @@ class Home extends Admin_Controller
 
             $data   =   array(
                 'type'  =>  1,
-                'pid'   =>  $sta
+                'p_id'  =>  $sta
             );
 
-            $sta    =   $this->images_model->updateImages($img_ids, $data);
+            $sta    =   $this->images_model->updateImages(explode(',',$img_ids), $data);
         }
 
         echo json_encode(array('state' => $sta));

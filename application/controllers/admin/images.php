@@ -19,7 +19,7 @@ class Images extends Admin_Controller
     {
         $config['upload_path']      =   FCPATH.'/public/images/uploads/';
         $config['allowed_types']    =   'gif|jpg|png';
-        $config['max_size']         =   100;
+        $config['max_size']         =   0;
         $config['max_width']        =   3000;
         $config['max_height']       =   3000;
         $config['file_name']        =   date('YmdHis').mt_rand(100,999);
@@ -41,8 +41,6 @@ class Images extends Admin_Controller
             $insert_id  =   $this->images_model->addImages($data);
             $result     =   array('state' => true, 'img_id' => $insert_id);
         }
-
-
 
         echo json_encode($result);
     }
